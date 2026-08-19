@@ -1,0 +1,23 @@
+{
+  "name": "@runkiwi/assets",
+  "version": "1.0.0",
+  "description": "Official 8-Bit Chunky Chibi brand marks, SVG icons, favicons, and mascot poses for Kiwi.",
+  "main": "react/index.ts",
+  "types": "react/index.ts",
+  "files": [
+    "svg",
+    "react",
+    "index.html",
+    "README.md"
+  ],
+  "keywords": [
+    "kiwi",
+    "8bit",
+    "pixel-art",
+    "mascot",
+    "brand-assets",
+    "react-icons"
+  ],
+  "author": "RunKiwi Team",
+  "license": "MIT"
+}

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiwi 8-Bit Brand & Asset Kit</title>
+  <link rel="icon" type="image/svg+xml" href="./svg/favicons/favicon-32x32.svg">
+  <style>
+    :root {
+      --bg: #060A0E;
+      --card-bg: rgba(255, 255, 255, 0.04);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-main: #FFFFFF;
+      --text-muted: #8E9893;
+      --primary: #93C645;
+      --primary-glow: rgba(147, 198, 69, 0.25);
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .theme-cream {
+      --bg: #F7F6F0;
+      --card-bg: rgba(0, 0, 0, 0.03);
+      --card-border: rgba(0, 0, 0, 0.08);
+      --text-main: #131816;
+      --text-muted: #565F5A;
+      --primary: #2B5F1B;
+      --primary-glow: rgba(43, 95, 27, 0.15);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      padding-bottom: 80px;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    
+    header {
+      border-bottom: 1px solid var(--card-border);
+      padding: 24px 0;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+
+    .header-inner { display: flex; justify-content: space-between; align-items: center; }
+    .brand-title { display: flex; align-items: center; gap: 12px; font-size: 18px; font-weight: 700; }
+    .theme-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-banner {
+      padding: 48px 0 32px;
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 40px;
+    }
+    .hero-banner h1 { font-size: 32px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .hero-banner p { color: var(--text-muted); font-size: 15px; max-width: 650px; }
+
+    .palette-strip {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    .swatch {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+    }
+    .swatch-color { width: 14px; height: 14px; border-radius: 3px; }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title::before {
+      content: "";
+      width: 4px;
+      height: 18px;
+      background: var(--primary);
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    .asset-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .asset-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+    .asset-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--primary);
+      box-shadow: 0 8px 24px var(--primary-glow);
+    }
+
+    .asset-preview {
+      height: 120px;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .asset-preview svg {
+      image-rendering: pixelated;
+      shape-rendering: crispEdges;
+    }
+
+    .asset-meta h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .asset-meta p { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+
+    .asset-actions {
+      display: flex;
+      gap: 8px;
+    }
+    .btn-action {
+      flex: 1;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      color: var(--text-main);
+      transition: all 0.15s;
+    }
+    .btn-action:hover {
+      background: var(--primary);
+      color: #000;
+      border-color: var(--primary);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #234E14;
+      color: #FFF;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: all 0.2s;
+      z-index: 1000;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <div class="brand-title">
+        <svg viewBox="0 0 16 16" width="24" height="24" shape-rendering="crispEdges" style="image-rendering: pixelated">
+          <rect x="5" y="2" width="5" height="1" fill="#88BC38"/>
+          <rect x="3" y="3" width="8" height="1" fill="#93C645"/>
+          <rect x="2" y="4" width="9" height="1" fill="#93C645"/>
+          <rect x="2" y="5" width="9" height="1" fill="#93C645"/>
+          <rect x="1" y="6" width="10" height="1" fill="#93C645"/>
+          <rect x="1" y="7" width="10" height="1" fill="#93C645"/>
+          <rect x="2" y="8" width="9" height="1" fill="#88BC38"/>
+          <rect x="2" y="9" width="9" height="1" fill="#78A832"/>
+          <rect x="3" y="10" width="7" height="1" fill="#6A962A"/>
+          <rect x="4" y="11" width="5" height="1" fill="#5A8222"/>
+          <rect x="7" y="4" width="2" height="2" fill="#111816"/>
+          <rect x="7" y="4" width="1" height="1" fill="#FFFFFF"/>
+          <rect x="11" y="5" width="3" height="2" fill="#FFAA28"/>
+          <rect x="14" y="6" width="1" height="1" fill="#E89115"/>
+          <rect x="4" y="12" width="2" height="2" fill="#FFAA28"/>
+          <rect x="3" y="13" width="3" height="1" fill="#FFAA28"/>
+          <rect x="8" y="12" width="2" height="2" fill="#FFAA28"/>
+          <rect x="7" y="13" width="3" height="1" fill="#FFAA28"/>
+        </svg>
+        <span>Kiwi 8-Bit Brand &amp; Mascot Assets</span>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()">🌓 Toggle Mode</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero-banner">
+      <h1>Official 8-Bit Chunky Chibi Brand Kit</h1>
+      <p>The comprehensive SVG vector, favicon, React component, and mascot pose library for Kiwi.</p>
+      
+      <div class="palette-strip">
+        <div class="swatch"><div class="swatch-color" style="background: #93C645"></div><span>#93C645 (Primary)</span></div>
+        <div class="swatch"><div class="swatch-color" style="background: #88BC38"></div><span>#88BC38 (Leaf)</span></div>
+        <div class="swatch"><div class="swatch-color" style="background: #6A962A"></div><span>#6A962A (Moss)</span></div>
+        <div class="swatch"><div class="swatch-color" style="background: #FFAA28"></div><span>#FFAA28 (Amber)</span></div>
+        <div class="swatch"><div class="swatch-color" style="background: #111816"></div><span>#111816 (Charcoal)</span></div>
+      </div>
+    </div>
+
+    <!-- Core Logos Section -->
+    <h2 class="section-title">Core Logos &amp; App Marks</h2>
+    <div class="asset-grid">
+      
+      <div class="asset-card">
+        <div class="asset-preview">
+          <svg viewBox="0 0 16 16" width="56" height="56" shape-rendering="crispEdges">
+            <rect x="5" y="2" width="5" height="1" fill="#88BC38"/>
+            <rect x="3" y="3" width="8" height="1" fill="#93C645"/>
+            <rect x="2" y="4" width="9" height="1" fill="#93C645"/>
+            <rect x="2" y="5" width="9" height="1" fill="#93C645"/>
+            <rect x="1" y="6" width="10" height="1" fill="#93C645"/>
+            <rect x="1" y="7" width="10" height="1" fill="#93C645"/>
+            <rect x="2" y="8" width="9" height="1" fill="#88BC38"/>
+            <rect x="2" y="9" width="9" height="1" fill="#78A832"/>
+            <rect x="3" y="10" width="7" height="1" fill="#6A962A"/>
+            <rect x="4" y="11" width="5" height="1" fill="#5A8222"/>
+            <rect x="7" y="4" width="2" height="2" fill="#111816"/>
+            <rect x="7" y="4" width="1" height="1" fill="#FFFFFF"/>
+            <rect x="11" y="5" width="3" height="2" fill="#FFAA28"/>
+            <rect x="14" y="6" width="1" height="1" fill="#E89115"/>
+            <rect x="4" y="12" width="2" height="2" fill="#FFAA28"/>
+            <rect x="3" y="13" width="3" height="1" fill="#FFAA28"/>
+            <rect x="8" y="12" width="2" height="2" fill="#FFAA28"/>
+            <rect x="7" y="13" width="3" height="1" fill="#FFAA28"/>
+          </svg>
+        </div>
+        <div class="asset-meta">
+          <h3>kiwi-logo.svg</h3>
+          <p>Official full-color 16x16 Chunky Chibi brand mark.</p>
+        </div>
+        <div class="asset-actions">
+          <a href="./svg/logos/kiwi-logo.svg" download class="btn-action">Download</a>
+        </div>
+      </div>
+
+      <div class="asset-card">
+        <div class="asset-preview">
+          <svg viewBox="0 0 16 16" width="56" height="56" shape-rendering="crispEdges">
+            <g fill="currentColor">
+              <rect x="5" y="2" width="5" height="1" opacity="0.8"/>
+              <rect x="3" y="3" width="8" height="1" opacity="0.9"/>
+              <rect x="2" y="4" width="5" height="1" opacity="1.0"/>
+              <rect x="9" y="4" width="2" height="1" opacity="1.0"/>
+              <rect x="2" y="5" width="9" height="1" opacity="1.0"/>
+              <rect x="1" y="6" width="10" height="1" opacity="0.95"/>
+              <rect x="1" y="7" width="10" height="1" opacity="0.95"/>
+              <rect x="2" y="8" width="9" height="1" opacity="0.85"/>
+              <rect x="2" y="9" width="9" height="1" opacity="0.8"/>
+              <rect x="3" y="10" width="7" height="1" opacity="0.7"/>
+              <rect x="4" y="11" width="5" height="1" opacity="0.6"/>
+              <rect x="11" y="5" width="3" height="2" opacity="0.95"/>
+              <rect x="14" y="6" width="1" height="1" opacity="0.8"/>
+              <rect x="4" y="12" width="2" height="2" opacity="0.9"/>
+              <rect x="3" y="13" width="3" height="1" opacity="0.9"/>
+              <rect x="8" y="12" width="2" height="2" opacity="0.9"/>
+              <rect x="7" y="13" width="3" height="1" opacity="0.9"/>
+            </g>
+            <rect x="7" y="4" width="1" height="1" fill="#FFFFFF" opacity="0.95"/>
+          </svg>
+        </div>
+        <div class="asset-meta">
+          <h3>kiwi-logo-monochrome.svg</h3>
+          <p>Adaptive single-color vector for any brand background.</p>
+        </div>
+        <div class="asset-actions">
+          <a href="./svg/logos/kiwi-logo-monochrome.svg" download class="btn-action">Download</a>
+        </div>
+      </div>
+
+      <div class="asset-card">
+        <div class="asset-preview">
+          <svg viewBox="0 0 32 32" width="56" height="56" shape-rendering="crispEdges">
+            <rect width="32" height="32" rx="7" fill="#0B131A"/>
+            <rect width="30" height="30" x="1" y="1" rx="6" fill="none" stroke="#93C645" stroke-width="1" stroke-opacity="0.3"/>
+            <g transform="translate(8, 8)">
+              <rect x="5" y="2" width="5" height="1" fill="#88BC38"/>
+              <rect x="3" y="3" width="8" height="1" fill="#93C645"/>
+              <rect x="2" y="4" width="9" height="1" fill="#93C645"/>
+              <rect x="2" y="5" width="9" height="1" fill="#93C645"/>
+              <rect x="1" y="6" width="10" height="1" fill="#93C645"/>
+              <rect x="1" y="7" width="10" height="1" fill="#93C645"/>
+              <rect x="2" y="8" width="9" height="1" fill="#88BC38"/>
+              <rect x="2" y="9" width="9" height="1" fill="#78A832"/>
+              <rect x="3" y="10" width="7" height="1" fill="#6A962A"/>
+              <rect x="4" y="11" width="5" height="1" fill="#5A8222"/>
+              <rect x="7" y="4" width="2" height="2" fill="#111816"/>
+              <rect x="7" y="4" width="1" height="1" fill="#FFFFFF"/>
+              <rect x="11" y="5" width="3" height="2" fill="#FFAA28"/>
+              <rect x="14" y="6" width="1" height="1" fill="#E89115"/>
+              <rect x="4" y="12" width="2" height="2" fill="#FFAA28"/>
+              <rect x="3" y="13" width="3" height="1" fill="#FFAA28"/>
+              <rect x="8" y="12" width="2" height="2" fill="#FFAA28"/>
+              <rect x="7" y="13" width="3" height="1" fill="#FFAA28"/>
+            </g>
+          </svg>
+        </div>
+        <div class="asset-meta">
+          <h3>favicon-32x32.svg</h3>
+          <p>Framed 32x32 squircle tile for browser tabs.</p>
+        </div>
+        <div class="asset-actions">
+          <a href="./svg/favicons/favicon-32x32.svg" download class="btn-action">Download</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Mascot Poses Section -->
+    <h2 class="section-title">Chunky Chibi Mascot Action Poses</h2>
+    <div class="asset-grid">
+      
+      <div class="asset-card">
+        <div class="asset-preview">
+          <svg viewBox="0 0 16 16" width="56" height="56" shape-rendering="crispEdges">
+            <rect x="5" y="2" width="5" height="1" fill="#88BC38"/>
+            <rect x="3" y="3" width="8" height="1" fill="#93C645"/>
+            <rect x="2" y="4" width="9" height="1" fill="#93C645"/>
+            <rect x="2" y="5" width="9" height="1" fill="#93C645"/>
+            <rect x="1" y="6" width="10" height="1" fill="#93C645"/>
+            <rect x="1" y="7" width="10" height="1" fill="#93C645"/>
+            <rect x="2" y="8" width="9" height="1" fill="#88BC38"/>
+            <rect x="2" y="9" width="9" height="1" fill="#78A832"/>
+            <rect x="3" y="10" width="7" height="1" fill="#6A962A"/>
+            <rect x="4" y="11" width="5" height="1" fill="#5A8222"/>
+            <rect x="7" y="4" width="2" height="2" fill="#111816"/>
+            <rect x="7" y="4" width="1" height="1" fill="#FFFFFF"/>
+            <rect x="11" y="5" width="3" height="2" fill="#FFAA28"/>
+            <rect x="14" y="6" width="1" height="1" fill="#E89115"/>
+            <rect x="4" y="12" width="2" height="2" fill="#FFAA28"/>
+            <rect x="3" y="13" width="3" height="1" fill="#FFAA28"/>
+            <rect x="8" y="12" width="2" height="2" fill="#FFAA28"/>
+            <rect x="7" y="13" width="3" height="1" fill="#FFAA28"/>
+          </svg>
+        </div>
+        <div class="asset-meta">
+          <h3>kiwi-chibi-idle.svg</h3>
+          <p>Standard standing pose for cards, docs, and empty states.</p>
+        </div>
+        <div class="asset-actions">
+          <a href="./svg/mascots/kiwi-chibi-idle.svg" download class="btn-action">Download</a>
+        </div>
+      </div>
+
+      <div class="asset-card">
+        <div class="asset-preview">
+          <svg viewBox="0 0 16 16" width="56" height="56" shape-rendering="crispEdges">
+            <rect x="5" y="2" width="5" height="1" fill="#88BC38"/>
+            <rect x="3" y="3" width="8" height="1" fill="#93C645"/>
+            <rect x="2" y="4" width="9" height="1" fill="#93C645"/>
+            <rect x="2" y="5" width="9" height="1" fill="#93C645"/>
+            <rect x="1" y="6" width="10" height="1" fill="#93C645"/>
+            <rect x="1" y="7" width="10" height="1" fill="#93C645"/>
+            <rect x="2" y="8" width="9" height="1" fill="#88BC38"/>
+            <rect x="2" y="9" width="9" height="1" fill="#78A832"/>
+            <rect x="3" y="10" width="7" height="1" fill="#6A962A"/>
+            <rect x="11" y="5" width="3" height="2" fill="#FFAA28"/>
+            <rect x="14" y="6" width="1" height="1" fill="#E89115"/>
+            <rect x="4" y="12" width="2" height="2" fill="#FFAA28"/>
+            <rect x="3" y="13" width="3" height="1" fill="#FFAA28"/>
+            <rect x="8" y="12" width="2" height="2" fill="#FFAA28"/>
+            <rect x="7" y="13" width="3" height="1" fill="#FFAA28"/>
+            <rect x="4" y="1" width="5" height="1" fill="#FF4D6D"/>
+            <rect x="3" y="2" width="1" height="3" fill="#FF4D6D"/>
+            <rect x="9" y="2" width="1" height="3" fill="#FF4D6D"/>
+            <rect x="2" y="4" width="1" height="3" fill="#00E5FF"/>
+            <rect x="9" y="4" width="1" height="3" fill="#00E5FF"/>
+            <rect x="6" y="4" width="4" height="2" fill="#090D0B"/>
+            <rect x="6" y="4" width="1" height="1" fill="#00E5FF"/>
+            <rect x="8" y="4" width="1" height="1" fill="#00E5FF"/>
+          </svg>
+        </div>
+        <div class="asset-meta">
+          <h3>kiwi-chibi-vibing.svg</h3>
+          <p>Headphones &amp; shades for active agent execution states.</p>
+        </div>
+        <div class="asset-actions">
+          <a href="./svg/mascots/kiwi-chibi-vibing.svg" download class="btn-action">Download</a>
+        </div>
+      </div>
+
+      <div class="asset-card">
+        <div class="asset-preview">
+          <svg viewBox="0 0 16 16" width="56" height="56" shape-rendering="crispEdges">
+            <rect x="5" y="2" width="5" height="1" fill="#88BC38"/>
+            <rect x="3" y="3" width="8" height="1" fill="#93C645"/>
+            <rect x="2" y="4" width="9" height="1" fill="#93C645"/>
+            <rect x="2" y="5" width="9" height="1" fill="#93C645"/>
+            <rect x="1" y="6" width="10" height="1" fill="#93C645"/>
+            <rect x="1" y="7" width="10" height="1" fill="#93C645"/>
+            <rect x="2" y="8" width="9" height="1" fill="#88BC38"/>
+            <rect x="2" y="9" width="9" height="1" fill="#78A832"/>
+            <rect x="3" y="10" width="7" height="1" fill="#6A962A"/>
+            <rect x="7" y="4" width="3" height="1" fill="#111816"/>
+            <rect x="6" y="5" width="1" height="1" fill="#111816"/>
+            <rect x="10" y="5" width="1" height="1" fill="#111816"/>
+            <rect x="11" y="5" width="3" height="2" fill="#FFAA28"/>
+            <rect x="14" y="6" width="1" height="1" fill="#E89115"/>
+            <rect x="3" y="12" width="2" height="2" fill="#FFAA28"/>
+            <rect x="2" y="13" width="3" height="1" fill="#FFAA28"/>
+            <rect x="9" y="11" width="2" height="2" fill="#FFAA28"/>
+            <rect x="9" y="12" width="3" height="1" fill="#FFAA28"/>
+            <rect x="1" y="4" width="1" height="2" fill="#88BC38"/>
+            <rect x="0" y="3" width="1" height="1" fill="#88BC38"/>
+          </svg>
+        </div>
+        <div class="asset-meta">
+          <h3>kiwi-chibi-dancing.svg</h3>
+          <p>Celebration dance for green tests &amp; merged PRs.</p>
+        </div>
+        <div class="asset-actions">
+          <a href="./svg/mascots/kiwi-chibi-dancing.svg" download class="btn-action">Download</a>
+        </div>
+      </div>
+
+      <div class="asset-card">
+        <div class="asset-preview">
+          <svg viewBox="0 0 16 16" width="56" height="56" shape-rendering="crispEdges">
+            <rect x="5" y="2" width="5" height="1" fill="#88BC38"/>
+            <rect x="3" y="3" width="8" height="1" fill="#93C645"/>
+            <rect x="2" y="4" width="9" height="1" fill="#93C645"/>
+            <rect x="2" y="5" width="9" height="1" fill="#93C645"/>
+            <rect x="1" y="6" width="10" height="1" fill="#93C645"/>
+            <rect x="1" y="7" width="10" height="1" fill="#93C645"/>
+            <rect x="2" y="8" width="9" height="1" fill="#88BC38"/>
+            <rect x="2" y="9" width="9" height="1" fill="#78A832"/>
+            <rect x="3" y="10" width="7" height="1" fill="#6A962A"/>
+            <rect x="7" y="4" width="2" height="2" fill="#111816"/>
+            <rect x="7" y="4" width="1" height="1" fill="#FFFFFF"/>
+            <rect x="11" y="5" width="3" height="2" fill="#FFAA28"/>
+            <rect x="14" y="6" width="1" height="1" fill="#E89115"/>
+            <rect x="4" y="11" width="3" height="1" fill="#FFAA28"/>
+            <rect x="8" y="11" width="3" height="1" fill="#FFAA28"/>
+            <rect x="0" y="5" width="2" height="2" fill="#3D5A12"/>
+            <rect x="0" y="7" width="1" height="3" fill="#FF4D6D"/>
+            <rect x="1" y="7" width="1" height="2" fill="#FFAA28"/>
+            <rect x="0" y="10" width="1" height="2" fill="#FFB703"/>
+          </svg>
+        </div>
+        <div class="asset-meta">
+          <h3>kiwi-chibi-flying.svg</h3>
+          <p>Jetpack booster for deployment &amp; shipping workflows.</p>
+        </div>
+        <div class="asset-actions">
+          <a href="./svg/mascots/kiwi-chibi-flying.svg" download class="btn-action">Download</a>
+        </div>
+      </div>
+
+      <div class="asset-card">
+        <div class="asset-preview">
+          <svg viewBox="0 0 16 16" width="56" height="56" shape-rendering="crispEdges">
+            <rect x="5" y="2" width="5" height="1" fill="#88BC38"/>
+            <rect x="3" y="3" width="8" height="1" fill="#93C645"/>
+            <rect x="2" y="4" width="9" height="1" fill="#93C645"/>
+            <rect x="2" y="5" width="9" height="1" fill="#93C645"/>
+            <rect x="1" y="6" width="10" height="1" fill="#93C645"/>
+            <rect x="1" y="7" width="10" height="1" fill="#93C645"/>
+            <rect x="2" y="8" width="9" height="1" fill="#88BC38"/>
+            <rect x="2" y="9" width="9" height="1" fill="#78A832"/>
+            <rect x="3" y="10" width="7" height="1" fill="#6A962A"/>
+            <rect x="7" y="4" width="2" height="2" fill="#111816"/>
+            <rect x="7" y="4" width="1" height="1" fill="#FFFFFF"/>
+            <rect x="11" y="5" width="3" height="2" fill="#FFAA28"/>
+            <rect x="14" y="6" width="1" height="1" fill="#E89115"/>
+            <rect x="4" y="12" width="2" height="2" fill="#FFAA28"/>
+            <rect x="3" y="13" width="3" height="1" fill="#FFAA28"/>
+            <rect x="8" y="12" width="2" height="2" fill="#FFAA28"/>
+            <rect x="7" y="13" width="3" height="1" fill="#FFAA28"/>
+            <rect x="7" y="3" width="3" height="3" fill="none" stroke="#FFAA28" stroke-width="0.8"/>
+            <rect x="10" y="6" width="1" height="1" fill="#FFAA28"/>
+          </svg>
+        </div>
+        <div class="asset-meta">
+          <h3>kiwi-chibi-hacking.svg</h3>
+          <p>Architect monocle for repo analysis and code review.</p>
+        </div>
+        <div class="asset-actions">
+          <a href="./svg/mascots/kiwi-chibi-hacking.svg" download class="btn-action">Download</a>
+        </div>
+      </div>
+
+      <div class="asset-card">
+        <div class="asset-preview">
+          <svg viewBox="0 0 16 16" width="56" height="56" shape-rendering="crispEdges">
+            <rect x="5" y="2" width="5" height="1" fill="#88BC38"/>
+            <rect x="3" y="3" width="8" height="1" fill="#93C645"/>
+            <rect x="2" y="4" width="9" height="1" fill="#93C645"/>
+            <rect x="2" y="5" width="9" height="1" fill="#93C645"/>
+            <rect x="1" y="6" width="10" height="1" fill="#93C645"/>
+            <rect x="1" y="7" width="10" height="1" fill="#93C645"/>
+            <rect x="2" y="8" width="9" height="1" fill="#88BC38"/>
+            <rect x="2" y="9" width="9" height="1" fill="#78A832"/>
+            <rect x="3" y="10" width="7" height="1" fill="#6A962A"/>
+            <rect x="7" y="4" width="2" height="2" fill="#111816"/>
+            <rect x="7" y="4" width="1" height="1" fill="#FFFFFF"/>
+            <rect x="11" y="5" width="3" height="2" fill="#FFAA28"/>
+            <rect x="14" y="6" width="1" height="1" fill="#E89115"/>
+            <rect x="4" y="12" width="2" height="2" fill="#FFAA28"/>
+            <rect x="3" y="13" width="3" height="1" fill="#FFAA28"/>
+            <rect x="8" y="12" width="2" height="2" fill="#FFAA28"/>
+            <rect x="7" y="13" width="3" height="1" fill="#FFAA28"/>
+            <rect x="0" y="4" width="3" height="5" fill="#4FB477"/>
+            <rect x="1" y="5" width="1" height="3" fill="#FFFFFF"/>
+          </svg>
+        </div>
+        <div class="asset-meta">
+          <h3>kiwi-chibi-guarding.svg</h3>
+          <p>Emerald sentinel shield for post-merge monitoring.</p>
+        </div>
+        <div class="asset-actions">
+          <a href="./svg/mascots/kiwi-chibi-guarding.svg" download class="btn-action">Download</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="toast" class="toast">SVG Copied to Clipboard!</div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('theme-cream');
+    }
+  </script>
+</body>
+</html>
