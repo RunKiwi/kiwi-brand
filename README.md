@@ -30,6 +30,13 @@ runkiwi-assets/
 │   │   ├── kiwi-logo.svg                # Full-color 16x16 Chunky Chibi brand mark
 │   │   ├── kiwi-logo-monochrome.svg     # Adaptive single-color vector (currentColor)
 │   │   └── kiwi-logo-with-wordmark.svg  # Logo + "kiwi" monospace wordmark
+│   ├── avatars/
+│   │   ├── github-avatar-dark-500x500.svg   # 500x500 high-res avatar with radial glow
+│   │   ├── github-avatar-light-500x500.svg  # 500x500 light editorial paper avatar
+│   │   └── app-icon-512x512.svg             # 512x512 macOS/mobile squircle app icon
+│   ├── banners/
+│   │   ├── github-social-preview-1280x640.svg # 1280x640 OpenGraph repository card
+│   │   └── github-org-header-1280x320.svg     # 1280x320 wide GitHub Org header
 │   ├── favicons/
 │   │   ├── favicon-16x16.svg            # Micro 16x16 tab icon
 │   │   ├── favicon-32x32.svg            # Squircle framed app tile

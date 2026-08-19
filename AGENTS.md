@@ -49,7 +49,19 @@ The Kiwi logo mark is an authentic **16×16 retro 8-bit Chunky Chibi Kiwi bird s
 
 ---
 
-## 💻 4. How to Include in Projects
+## 🖼️ 4. High-Res Avatars & Banners
+
+| Purpose | Asset File | Dimensions / Spec |
+| :--- | :--- | :--- |
+| **GitHub / Twitter Avatar (Dark)** | `svg/avatars/github-avatar-dark-500x500.svg` | 500×500 px with matrix grid & radial glow |
+| **GitHub / Twitter Avatar (Light)** | `svg/avatars/github-avatar-light-500x500.svg` | 500×500 px warm editorial paper mode |
+| **App Icon / Squircle Tile** | `svg/avatars/app-icon-512x512.svg` | 512×512 px macOS/iOS style squircle |
+| **GitHub Social Preview Card** | `svg/banners/github-social-preview-1280x640.svg` | 1280×640 px OpenGraph social card |
+| **GitHub Org Header Banner** | `svg/banners/github-org-header-1280x320.svg` | 1280×320 px wide panorama banner |
+
+---
+
+## 💻 5. How to Include in Projects
 
 ### A. Raw SVG Inclusion (Universal)
 ```html
