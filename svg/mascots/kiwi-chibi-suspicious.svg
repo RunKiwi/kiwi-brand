@@ -18,9 +18,9 @@
   <rect x="5" y="1" width="4" height="1" fill="#111816"/>
   <rect x="9" y="1" width="4" height="1" fill="#111816"/>
   <!-- Monocle -->
-  <rect x="7" y="4" width="3" height="3" fill="none" stroke="#FFAA28" strokeWidth={0.8}/>
+  <rect x="7" y="4" width="3" height="3" fill="none" stroke="#FFAA28" stroke-width="0.8"/>
   <rect x="10" y="7" width="1" height="1" fill="#FFAA28"/>
   <!-- Suspicious expression lines -->
-  <line x1="4" y1="5" x2="8" y2="5" stroke="#111816" strokeWidth="1.5"/>
-  <line x1="4" y1="6" x2="8" y2="6" stroke="#111816" strokeWidth="1.5"/>
+  <line x1="4" y1="5" x2="8" y2="5" stroke="#111816" stroke-width="1.5"/>
+  <line x1="4" y1="6" x2="8" y2="6" stroke="#111816" stroke-width="1.5"/>
 </svg>
