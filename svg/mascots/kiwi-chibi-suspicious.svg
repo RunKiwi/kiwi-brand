@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="64" height="64" shape-rendering="crispEdges">
+  <!-- Kiwi Chunky Chibi - Suspicious / Monocle & Raised Eyebrows -->
+  <rect x="5" y="2" width="5" height="1" fill="#88BC38"/>
+  <rect x="3" y="3" width="8" height="1" fill="#93C645"/>
+  <rect x="2" y="4" width="9" height="1" fill="#93C645"/>
+  <rect x="2" y="5" width="9" height="1" fill="#93C645"/>
+  <rect x="1" y="6" width="10" height="1" fill="#93C645"/>
+  <rect x="1" y="7" width="10" height="1" fill="#93C645"/>
+  <rect x="2" y="8" width="9" height="1" fill="#88BC38"/>
+  <rect x="2" y="9" width="9" height="1" fill="#78A832"/>
+  <rect x="3" y="10" width="7" height="1" fill="#6A962A"/>
+  <!-- Eyes -->
+  <rect x="6" y="3" width="3" height="2" fill="#111816"/>
+  <rect x="6" y="3" width="1" height="1" fill="#FFFFFF"/>
+  <rect x="10" y="3" width="3" height="2" fill="#111816"/>
+  <rect x="10" y="3" width="1" height="1" fill="#FFFFFF"/>
+  <!-- Raised Eyebrows -->
+  <rect x="5" y="1" width="4" height="1" fill="#111816"/>
+  <rect x="9" y="1" width="4" height="1" fill="#111816"/>
+  <!-- Monocle -->
+  <rect x="7" y="4" width="3" height="3" fill="none" stroke="#FFAA28" strokeWidth={0.8}/>
+  <rect x="10" y="7" width="1" height="1" fill="#FFAA28"/>
+  <!-- Suspicious expression lines -->
+  <line x1="4" y1="5" x2="8" y2="5" stroke="#111816" strokeWidth="1.5"/>
+  <line x1="4" y1="6" x2="8" y2="6" stroke="#111816" strokeWidth="1.5"/>
+</svg>
