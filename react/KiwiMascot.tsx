@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type KiwiPose = 'idle' | 'vibing' | 'dancing' | 'flying' | 'hacking' | 'guarding' | 'sleeping';
+export type KiwiPose = 'idle' | 'vibing' | 'dancing' | 'flying' | 'hacking' | 'guarding' | 'sleeping' | 'suspicious';
 
 export interface KiwiMascotProps extends React.SVGProps<SVGSVGElement> {
   pose?: KiwiPose;
@@ -122,6 +122,14 @@ export const KiwiMascot: React.FC<KiwiMascotProps> = ({
         <>
           <rect x="1" y="4" width="1" height="2" fill="#88BC38" />
           <rect x="0" y="3" width="1" height="1" fill="#88BC38" />
+        </>
+      )}
+
+      {pose === 'suspicious' && (
+        <>
+          <rect x="7" y="2" width="3" height="1" fill="#111816" />
+          <rect x="7" y="3" width="3" height="3" fill="none" stroke="#FFAA28" strokeWidth={0.8} />
+          <rect x="10" y="6" width="1" height="1" fill="#FFAA28" />
         </>
       )}
     </svg>
