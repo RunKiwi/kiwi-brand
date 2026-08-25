@@ -46,6 +46,7 @@ The Kiwi logo mark is an authentic **16×16 retro 8-bit Chunky Chibi Kiwi bird s
 | `hacking` | `svg/mascots/kiwi-chibi-hacking.svg` | Architect review round, AST diff analysis, test planning |
 | `guarding` | `svg/mascots/kiwi-chibi-guarding.svg`| 24h post-merge telemetry monitoring, regression scans |
 | `sleeping` | `svg/mascots/kiwi-chibi-sleeping.svg`| Dormant state, paused runs, sandbox standby |
+| `running`  | `svg/mascots/kiwi-chibi-running.svg` | Exercise wheel animation, active agent workflows |
 
 ---
 

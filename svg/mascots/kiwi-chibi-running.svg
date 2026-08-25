@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="64" height="64" shape-rendering="crispEdges">
+  <!-- Kiwi Chunky Chibi - Running in Exercise Wheel -->
+  <style>
+    .wheel { transform-origin: 8px 8px; animation: wheel-spin 2s linear infinite; }
+    @keyframes wheel-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+  <!-- Yellow Exercise Wheel (renders behind kiwi) -->
+  <g class="wheel">
+    <!-- Outer ring -->
+    <rect x="4" y="0" width="8" height="1" fill="#FFD700"/>
+    <rect x="2" y="1" width="2" height="1" fill="#FFD700"/>
+    <rect x="12" y="1" width="2" height="1" fill="#FFD700"/>
+    <rect x="1" y="2" width="1" height="1" fill="#FFD700"/>
+    <rect x="14" y="2" width="1" height="1" fill="#FFD700"/>
+    <rect x="0" y="4" width="1" height="8" fill="#FFD700"/>
+    <rect x="15" y="4" width="1" height="8" fill="#FFD700"/>
+    <rect x="1" y="12" width="1" height="1" fill="#FFD700"/>
+    <rect x="14" y="12" width="1" height="1" fill="#FFD700"/>
+    <rect x="2" y="14" width="2" height="1" fill="#FFD700"/>
+    <rect x="12" y="14" width="2" height="1" fill="#FFD700"/>
+    <rect x="4" y="15" width="8" height="1" fill="#FFD700"/>
+    <!-- Spokes - horizontal -->
+    <rect x="0" y="7" width="16" height="1" fill="#FFD700"/>
+    <rect x="0" y="8" width="16" height="1" fill="#FFD700"/>
+    <!-- Spokes - vertical -->
+    <rect x="7" y="0" width="1" height="16" fill="#FFD700"/>
+    <rect x="8" y="0" width="1" height="16" fill="#FFD700"/>
+  </g>
+  <!-- Kiwi Body Greens -->
+  <rect x="5" y="2" width="5" height="1" fill="#88BC38"/>
+  <rect x="3" y="3" width="8" height="1" fill="#93C645"/>
+  <rect x="2" y="4" width="9" height="1" fill="#93C645"/>
+  <rect x="2" y="5" width="9" height="1" fill="#93C645"/>
+  <rect x="1" y="6" width="10" height="1" fill="#93C645"/>
+  <rect x="1" y="7" width="10" height="1" fill="#93C645"/>
+  <rect x="2" y="8" width="9" height="1" fill="#88BC38"/>
+  <rect x="2" y="9" width="9" height="1" fill="#78A832"/>
+  <rect x="3" y="10" width="7" height="1" fill="#6A962A"/>
+  <rect x="4" y="11" width="5" height="1" fill="#5A8222"/>
+  <!-- Eye with sparkle -->
+  <rect x="7" y="4" width="2" height="2" fill="#111816"/>
+  <rect x="7" y="4" width="1" height="1" fill="#FFFFFF"/>
+  <!-- Beak -->
+  <rect x="11" y="5" width="3" height="2" fill="#FFAA28"/>
+  <rect x="14" y="6" width="1" height="1" fill="#E89115"/>
+  <!-- Running stride feet -->
+  <!-- Left foot forward/raised -->
+  <rect x="3" y="12" width="2" height="1" fill="#FFAA28"/>
+  <rect x="2" y="13" width="3" height="1" fill="#FFAA28"/>
+  <!-- Right foot back/extended -->
+  <rect x="9" y="13" width="2" height="1" fill="#FFAA28"/>
+  <rect x="10" y="14" width="2" height="1" fill="#FFAA28"/>
+</svg>
