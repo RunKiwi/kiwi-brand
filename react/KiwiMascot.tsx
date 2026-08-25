@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type KiwiPose = 'idle' | 'vibing' | 'dancing' | 'flying' | 'hacking' | 'guarding' | 'sleeping';
+export type KiwiPose = 'idle' | 'vibing' | 'dancing' | 'flying' | 'hacking' | 'guarding' | 'sleeping' | 'running';
 
 export interface KiwiMascotProps extends React.SVGProps<SVGSVGElement> {
   pose?: KiwiPose;
@@ -28,6 +28,33 @@ export const KiwiMascot: React.FC<KiwiMascotProps> = ({
       aria-hidden="true"
       {...props}
     >
+      {pose === 'running' && (
+        <>
+          <style>
+            {`.wheel { transform-origin: 8px 8px; animation: wheel-spin 2s linear infinite; }
+            @keyframes wheel-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}
+          </style>
+          {/* Yellow Exercise Wheel (renders behind kiwi) */}
+          <g className="wheel">
+            <rect x="4" y="0" width="8" height="1" fill="#FFD700" />
+            <rect x="2" y="1" width="2" height="1" fill="#FFD700" />
+            <rect x="12" y="1" width="2" height="1" fill="#FFD700" />
+            <rect x="1" y="2" width="1" height="1" fill="#FFD700" />
+            <rect x="14" y="2" width="1" height="1" fill="#FFD700" />
+            <rect x="0" y="4" width="1" height="8" fill="#FFD700" />
+            <rect x="15" y="4" width="1" height="8" fill="#FFD700" />
+            <rect x="1" y="12" width="1" height="1" fill="#FFD700" />
+            <rect x="14" y="12" width="1" height="1" fill="#FFD700" />
+            <rect x="2" y="14" width="2" height="1" fill="#FFD700" />
+            <rect x="12" y="14" width="2" height="1" fill="#FFD700" />
+            <rect x="4" y="15" width="8" height="1" fill="#FFD700" />
+            <rect x="0" y="7" width="16" height="1" fill="#FFD700" />
+            <rect x="0" y="8" width="16" height="1" fill="#FFD700" />
+            <rect x="7" y="0" width="1" height="16" fill="#FFD700" />
+            <rect x="8" y="0" width="1" height="16" fill="#FFD700" />
+          </g>
+        </>
+      )}
       {/* Body Greens */}
       <rect x="5" y="2" width="5" height="1" fill="#88BC38" />
       <rect x="3" y="3" width="8" height="1" fill="#93C645" />
@@ -71,6 +98,13 @@ export const KiwiMascot: React.FC<KiwiMascotProps> = ({
         <>
           <rect x="4" y="11" width="3" height="1" fill="#FFAA28" />
           <rect x="8" y="11" width="3" height="1" fill="#FFAA28" />
+        </>
+      ) : pose === 'running' ? (
+        <>
+          <rect x="3" y="12" width="2" height="1" fill="#FFAA28" />
+          <rect x="2" y="13" width="3" height="1" fill="#FFAA28" />
+          <rect x="9" y="13" width="2" height="1" fill="#FFAA28" />
+          <rect x="10" y="14" width="2" height="1" fill="#FFAA28" />
         </>
       ) : (
         <>

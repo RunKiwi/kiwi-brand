@@ -48,7 +48,8 @@ runkiwi-assets/
 │       ├── kiwi-chibi-flying.svg        # Dual rocket jetpack booster
 │       ├── kiwi-chibi-hacking.svg       # Architect golden monocle
 │       ├── kiwi-chibi-guarding.svg      # Emerald sentinel shield (24h telemetry)
-│       └── kiwi-chibi-sleeping.svg      # Standby dormant mode
+│       ├── kiwi-chibi-sleeping.svg      # Standby dormant mode
+│       └── kiwi-chibi-running.svg       # Running in yellow exercise wheel
 └── react/
     ├── index.ts                         # React component exports
     ├── KiwiLogo.tsx                     # <KiwiLogo size={32} />
@@ -75,6 +76,7 @@ import { KiwiLogo, KiwiMascot } from '@runkiwi/assets/react';
 <KiwiMascot pose="hacking" size={32} />
 <KiwiMascot pose="guarding" size={32} />
 <KiwiMascot pose="sleeping" size={32} />
+<KiwiMascot pose="running" size={32} />
 ```
 
 ---
